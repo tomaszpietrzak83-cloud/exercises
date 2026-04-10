@@ -1,7 +1,7 @@
 #Sort letters of string in alphabetical order
 string = "Something is Wrong with this string"
 
-def sort_string(string):
+def sort(string):
 
     characters = list(string)
         
@@ -20,12 +20,12 @@ def sort_string(string):
 
         if response.lower() == "yes" or response.lower() == "y":
             sorted_string = sorted_string.lower()
-            sort_string = list(sorted_string)
-            sort_string.sort()
-            sorted_string = ''.join(sort_string)
+            letters = list(sorted_string)
+            letters.sort()
+            sorted_string = ''.join(letters)
 
         else:
             return sorted_string
     
     return sorted_string
-print(sort_string(string))
+print(sort())
