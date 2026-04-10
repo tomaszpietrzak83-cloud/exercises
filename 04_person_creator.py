@@ -75,16 +75,89 @@ def createPerson(name, className, rase, role):
 
 print("Welcome to the character creator!")
 command = input("What do you want to do? (create/inspect/exit): ").lower()
+
+#while command not in ["create", "inspect", "exit"]:
+ #   print("Invalid command. Please choose from create, inspect, exit.")
+
+if command == "C" or command == "c":
+    command = "create"
+elif command == "I" or command == "c":
+    command = "inspect"
+elif command == "E" or command == "e":
+    command = "exit"
+
+
 while command != "exit":
     if command == "create":
+        statPoints = 20
         name = input("Enter your character's name: ").lower().capitalize()
         print("Choose a class: High, Tough, Agile, Intelligent, Balanced")
         className = input("Enter your character's class: ").lower().capitalize()
+
+        if className == "h" or className == "H":
+            className = "High"
+        elif className == "t" or className == "T":
+            className = "Tough"
+        elif className == "a" or className == "A":
+            className = "Agile"
+        elif className == "i" or className == "I":
+            className = "Intelligent"
+        elif className == "b" or className == "B":
+            className = "Balanced"
+            
+        if className not in classNameTable:
+            print("Invalid class. Please choose from High, Tough, Agile, Intelligent, Balanced.")
+        
         print("Choose a race: Human, Elf, Dwarf, Orc, Troll")
         rase = input("Enter your character's race: ").lower().capitalize()
+        if rase == "h" or rase == "H":
+            rase = "Human"
+        elif rase == "e" or rase == "E":
+            rase = "Elf"
+        elif rase == "d" or rase == "D":
+            rase = "Dwarf"
+        elif rase == "o" or rase == "O":
+            rase = "Orc"
+        elif rase == "t" or rase == "T":
+            rase = "Troll"
+
         print("Choose a role: Warrior, Mage, Rogue, Tank, Paladin")
         role = input("Enter your character's role: ").lower().capitalize()
+        if role == "w" or role == "W":
+            role = "Warrior"
+        elif role == "m" or role == "M":
+            role = "Mage"
+        elif role == "r" or role == "R":
+            role = "Rogue"
+        elif role == "t" or role == "T":
+            role = "Tank"
+        elif role == "p" or role == "P":
+            role = "Paladin"
+
         character = createPerson(name, className, rase, role)
+
+        print("You have", statPoints, "stat points to distribute.")
+        while statPoints > 0:
+            stat = input("Which stat do you want to increase? (HP/MP/Strength/Agility/Intelligence): ")
+            if stat in ["Strength" or "s" or "S" or "strength", "Agility" or "a" or "A" or "agility", "Intelligence" or "i" or "I" or "intelligence"]:
+                points = int(input(f"How many points do you want to add to {stat}? "))
+                if points <= statPoints:
+                    character[f"person{len(person)}"][stat] += points
+                    statPoints -= points
+                    print(f"{points} points added to {stat}. You have {statPoints} points left.")
+                else:
+                    print("You don't have enough stat points. Please try again.")
+            elif stat in ["HP" or "h" or "hp", "MP" or "m" or "mp"]:
+                points = int(input(f"How many points do you want to add to {stat}? It will add 5 to your {stat} per point. "))
+                if points <= statPoints:
+                    character[f"person{len(person)}"][stat] += 5 * points
+                    statPoints -= points
+                    print(f"{points} points added to {stat}. You have {statPoints} points left.")
+                else:
+                    print("You don't have enough stat points. Please try again.")
+            else:
+                print("Invalid stat. Please choose from HP, MP, Strength, Agility, Intelligence.")
+
     elif command == "inspect":
         for key, value in person.items():
             print(f"{key}: {value}")
