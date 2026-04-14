@@ -11,13 +11,13 @@ def sort(text):
     if ' ' in sorted_string:
         response = input("Do you want to remove spaces? (yes/no): ")
 
-        if response.lower() == "yes" or response.lower() == "y":
+        if response.lower() == "yes" or "y":
             sorted_string = sorted_string.replace(' ', '')
 
     if sorted_string.islower() == False:
         response = input("Do you want to convert all letters to lowercase? (yes/no): ")
 
-        if response.lower() == "yes" or response.lower() == "y":
+        if response.lower() == "yes" or "y":
             sorted_string = sorted_string.lower()
             letters = list(sorted_string)
             letters.sort()
