@@ -55,7 +55,8 @@ def letterCounter(phrase):
             if number in numberOfLettersInEachWord:
                 numberOfNumbers = numberOfLettersInEachWord.count(number)
                 print(
-                    f"There are {numberOfNumbers} {number}-letter word{'' if {number} == 1 else 's'} in phrase"
+                    f"There {'is' if numberOfNumbers == 1 else 'are'} {numberOfNumbers} "
+                    f"{number}-letter word{'' if numberOfNumbers == 1 else 's'} in the phrase"
                 )
     else:
         exit()
