@@ -26,7 +26,7 @@ def addElementEnd(value, circularList):
 
     newNode = Node(value)
 
-    if circularList.head == None:
+    if circularList.head is None:
         circularList.head = newNode
         newNode.next = newNode
         return
@@ -45,7 +45,7 @@ def elementCounter(circularList):
     current = circularList.head
     numberOfNodes = 1
 
-    if circularList.head == None:
+    if circularList.head is None:
         numberOfNodes = 0
         return numberOfNodes
 
