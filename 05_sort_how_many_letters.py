@@ -48,8 +48,10 @@ def letterCounter(phrase):
         "Do you want to know how many of each number there is ([Y]es/[N]o)"
     )
 
+    maxLengthWord = max(numberOfLettersInEachWord)
+
     if userInput.lower() == "y":
-        for number in range(30):  # i dont know what is longest word
+        for number in range(maxLengthWord):
             if number in numberOfLettersInEachWord:
                 numberOfNumbers = numberOfLettersInEachWord.count(number)
                 print(
