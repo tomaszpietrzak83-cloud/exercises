@@ -2,7 +2,7 @@
 phrase = "Something is Wrong with this string"
 
 
-def sort(text):
+def sortCharacters(text):
 
     characters = list(text)
 
@@ -30,4 +30,4 @@ def sort(text):
     return sorted_string
 
 
-print(sort(phrase))
+print(sortCharacters(phrase))
