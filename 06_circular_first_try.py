@@ -9,17 +9,6 @@ class CircularList:
         self.head = None
 
 
-listOfNodes = CircularList()
-node1 = Node(10)
-listOfNodes.head = node1
-
-node2 = Node(20)
-
-node1.next = node2
-node2.next = node1
-
-current = listOfNodes.head
-
 
 # it adds element at the end
 def addElementEnd(value, circularList):
@@ -79,6 +68,17 @@ def addElementAtSpecificPlace(value, circularList, place):
 
     return
 
+
+listOfNodes = CircularList()
+node1 = Node(10)
+listOfNodes.head = node1
+
+node2 = Node(20)
+
+node1.next = node2
+node2.next = node1
+
+current = listOfNodes.head
 
 while True:
     print(current.value)
