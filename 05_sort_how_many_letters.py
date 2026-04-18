@@ -11,7 +11,7 @@ Mesmerized, the fox decided that adventure, '\
 however unpredictable, was undeniably worth pursuing."
 
 
-def letterCounter(phrase):
+def countLetters(phrase):
 
     strangeCharacters = [
         "!",
@@ -48,10 +48,10 @@ def letterCounter(phrase):
         "Do you want to know how many of each number there is ([Y]es/[N]o)"
     )
 
-    maxLengthWord = max(numberOfLettersInEachWord)
+    maxWordLength = max(numberOfLettersInEachWord)
 
     if userInput.lower() == "y":
-        for number in range(maxLengthWord):
+        for number in range(maxWordLength):
             if number in numberOfLettersInEachWord:
                 numberOfNumbers = numberOfLettersInEachWord.count(number)
                 print(
@@ -62,4 +62,4 @@ def letterCounter(phrase):
         exit()
 
 
-print(letterCounter(text))
+print(countLetters(text))
