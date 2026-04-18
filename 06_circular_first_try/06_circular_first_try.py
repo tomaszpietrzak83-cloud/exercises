@@ -9,11 +9,14 @@ class CircularList:
         self.head = None
 
 
+def nodeAppend(number):
+    return Node(number)
+
 
 # it adds element at the end
 def addElementEnd(value, circularList):
 
-    newNode = Node(value)
+    newNode = nodeAppend(value)
 
     if circularList.head is None:
         circularList.head = newNode
@@ -49,7 +52,7 @@ def addElementAtSpecificPlace(value, circularList, place):
 
     if place > elementCounter(circularList):
         return addElementEnd(value)
-    newNode = Node(value)
+    newNode = nodeAppend(value)
 
     current = circularList.head
     counter = 1
