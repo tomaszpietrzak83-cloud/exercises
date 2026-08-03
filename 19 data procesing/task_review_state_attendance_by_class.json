@@ -1,0 +1,38 @@
+{
+  "task_id": "attendance_by_class",
+  "task_name": "Data Processing: attendance by class",
+  "last_updated": "2026-04-25",
+  "last_updated_at_local": "2026-04-25T13:55:41+02:00",
+  "active_issues": [],
+  "resolved_issues": [],
+  "review_policy": {
+    "do_not_rescore_resolved_items_repeatedly": true,
+    "focus_on_new_or_still_active_issues": true
+  },
+  "chat_events": [
+    {
+      "date": "2026-04-25",
+      "time_local": "13:32",
+      "timestamp_local": "2026-04-25T13:32:31+02:00",
+      "event_type": "attempt",
+      "attempt_count": 1,
+      "note": "New task started: first map student names to classes, then compute attendance percentage per class.",
+      "exp_delta": 2,
+      "learning_minutes": 0,
+      "mistake_id": null,
+      "mistake_count": null
+    },
+    {
+      "date": "2026-04-25",
+      "time_local": "13:55",
+      "timestamp_local": "2026-04-25T13:55:41+02:00",
+      "event_type": "progress",
+      "attempt_count": 2,
+      "note": "Second attendance attempt: grouped averages by class and separated counting from final class aggregation, but dictionary access and presence-state logic still need correction.",
+      "exp_delta": 2,
+      "learning_minutes": 0,
+      "mistake_id": null,
+      "mistake_count": null
+    }
+  ]
+}

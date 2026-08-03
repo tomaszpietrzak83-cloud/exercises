@@ -1,0 +1,66 @@
+{
+  "task_id": "data_processing_grades",
+  "task_name": "Data Processing: grades parsing",
+  "last_updated": "2026-04-25",
+  "active_issues": [],
+  "resolved_issues": [],
+  "review_policy": {
+    "do_not_rescore_resolved_items_repeatedly": true,
+    "focus_on_new_or_still_active_issues": true
+  },
+  "chat_events": [
+    {
+      "date": "2026-04-25",
+      "event_type": "attempt",
+      "attempt_count": 1,
+      "note": "First parsing attempt with split, loops, and initial dictionary idea after saying the concept is new.",
+      "exp_delta": 2,
+      "learning_minutes": 20,
+      "mistake_id": null,
+      "mistake_count": null
+    },
+    {
+      "date": "2026-04-25",
+      "event_type": "progress",
+      "attempt_count": 2,
+      "note": "Second parsing attempt: correct idx check, but split().append() still blocks building keys and values.",
+      "exp_delta": -1,
+      "learning_minutes": 10,
+      "mistake_id": "split_append_misuse",
+      "mistake_count": 1
+    },
+    {
+      "date": "2026-04-25",
+      "event_type": "progress",
+      "attempt_count": 3,
+      "note": "Third parsing attempt: still assigning the result of list.append() and building dict from zip in the wrong form while parsing rows into student records.",
+      "exp_delta": -1,
+      "learning_minutes": 0,
+      "mistake_id": "split_append_misuse",
+      "mistake_count": 3
+    },
+    {
+      "date": "2026-04-25",
+      "event_type": "progress",
+      "attempt_count": 4,
+      "note": "Working version now parses rows into student names and grade dictionaries using zip over headers and values.",
+      "exp_delta": 4,
+      "learning_minutes": 0,
+      "mistake_id": null,
+      "mistake_count": null
+    },
+    {
+      "date": "2026-04-25",
+      "time_local": "13:25",
+      "timestamp_local": "2026-04-25T13:25:19+02:00",
+      "event_type": "completed",
+      "attempt_count": 4,
+      "note": "Completed the grades dictionary task and explicitly understood that one dictionary entry is added on each loop iteration, so the full loop adds all students.",
+      "exp_delta": 6,
+      "learning_minutes": 0,
+      "mistake_id": null,
+      "mistake_count": null
+    }
+  ],
+  "last_updated_at_local": "2026-04-25T13:25:19+02:00"
+}
